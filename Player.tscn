@@ -183,6 +183,8 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 16
+motion_mode = 1
 script = ExtResource("1_vk0pp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -207,3 +209,5 @@ script = ExtResource("6_hs6p7")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("7_24see")
+
+[node name="Camera2D" type="Camera2D" parent="."]
