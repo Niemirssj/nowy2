@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b546vtva3ne3f"
-path="res://.godot/imported/Dude_monster_walka back.png-ce35a5d377708777822fd7504b789673.ctex"
+uid="uid://t55wt2p3fo26"
+path="res://.godot/imported/Sword_Idle1_shadow.png-fb6c81df0984d27f39429aee1af47a42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Dude_monster_walka back.png"
-dest_files=["res://.godot/imported/Dude_monster_walka back.png-ce35a5d377708777822fd7504b789673.ctex"]
+source_file="res://Player/Sprites/Sword_Idle/Sword_Idle1_shadow.png"
+dest_files=["res://.godot/imported/Sword_Idle1_shadow.png-fb6c81df0984d27f39429aee1af47a42.ctex"]
 
 [params]
 

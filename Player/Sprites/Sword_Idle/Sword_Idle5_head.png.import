@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wwlneuwce4lh"
-path="res://.godot/imported/Dude_sprite.png-ba423d2e6d9fb6f5afa43a48b8b5c4bc.ctex"
+uid="uid://ds5n85hg2a10c"
+path="res://.godot/imported/Sword_Idle5_head.png-6b9d2913e2840c7e1e4649a2fb94d1db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Dude_sprite.png"
-dest_files=["res://.godot/imported/Dude_sprite.png-ba423d2e6d9fb6f5afa43a48b8b5c4bc.ctex"]
+source_file="res://Player/Sprites/Sword_Idle/Sword_Idle5_head.png"
+dest_files=["res://.godot/imported/Sword_Idle5_head.png-6b9d2913e2840c7e1e4649a2fb94d1db.ctex"]
 
 [params]
 

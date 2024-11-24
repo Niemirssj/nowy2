@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdgdgl6v2d23b"
-path="res://.godot/imported/Dude_Monster_Walk_6.png-a7bd8a0d4bfa2c5c7ee944e67eb3118e.ctex"
+uid="uid://c8ickh152rt7p"
+path="res://.godot/imported/Sword_Walk_Attack6_swing.png-ae99bc1b93c30efcfbac81f74f4df7c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Dude_Monster_Walk_6.png"
-dest_files=["res://.godot/imported/Dude_Monster_Walk_6.png-a7bd8a0d4bfa2c5c7ee944e67eb3118e.ctex"]
+source_file="res://Player/Sprites/Sword_Walk_Attack/Sword_Walk_Attack6_swing.png"
+dest_files=["res://.godot/imported/Sword_Walk_Attack6_swing.png-ae99bc1b93c30efcfbac81f74f4df7c1.ctex"]
 
 [params]
 
