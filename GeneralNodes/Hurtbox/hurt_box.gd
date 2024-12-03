@@ -9,10 +9,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func AreaEntered( a : Area2D) -> void:
 	if a is Hitbox:
-		a.TakeDamage(damage)
+		a.TakeDamage(self)
 	pass

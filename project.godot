@@ -11,19 +11,20 @@ config_version=5
 [application]
 
 config/name="nowy2"
-run/main_scene="res://Background.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LevelManager="*res://Globals/GlobalLevelManager.gd"
+PlayerHud="*res://GUI/PlayerHud/player_hud.tscn"
 PlayerManager="*res://Globals/global_player_manager.gd"
+SceneTransition="*res://GUI/SceneTransition/SceneTransition.tscn"
 
 [display]
 
-window/size/viewport_width=450
-window/size/viewport_height=270
+window/size/viewport_width=480
+window/size/viewport_height=240
 window/stretch/mode="viewport"
 
 [input]

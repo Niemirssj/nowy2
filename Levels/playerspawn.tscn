@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmxr5rpkw2ao"]
+
+[ext_resource type="Texture2D" uid="uid://dshqe6nn0mtsp" path="res://Player/Sprites/Sword_Idle/Sword_Idle_full.png" id="1_2gu4o"]
+[ext_resource type="Script" path="res://Levels/Scripts/player_spawn.gd" id="1_tp6m3"]
+
+[node name="Playerspawn" type="Node2D"]
+script = ExtResource("1_tp6m3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.258861, 0.577317, 3.85046e-07, 1)
+position = Vector2(0, -20)
+texture = ExtResource("1_2gu4o")
+hframes = 12
+vframes = 4

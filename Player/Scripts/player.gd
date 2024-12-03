@@ -1,10 +1,17 @@
 class_name Player extends CharacterBody2D
 
 signal direction_changed( new_direction: Vector2 )
+signal player_damaged(hurt_box : HurtBox)
+
 var direction : Vector2 = Vector2.ZERO
 var cardinal_direction : Vector2 = Vector2.DOWN
+var invulnerable : bool = false
+var hp : int = 6
+var max_hp : int = 6
 @onready var animation_player : AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player2: AnimationPlayer = $AnimationPlayer
+@onready var hit_box: Hitbox = $HitBox
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 
 const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 @onready var state_machine: PlayeStateMachine=$StateMachine
@@ -13,11 +20,13 @@ const DIR_4 = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 func _ready() -> void:
 	PlayerManager.player = self
 	state_machine.Initialize(self)
+	hit_box.Damaged.connect(_take_damage)
+	update_hp(90)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	direction.x=Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y=Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -25,7 +34,7 @@ func _process(delta):
 	pass
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	pass
 
@@ -49,10 +58,12 @@ func SetDirection() -> bool:
 
 func UpdateAnimation(state: String) -> void:
 	print(state)
-	if state == "attack":
+	if state == "attack" || state == "stun":
+		
 		animation_player2.play(state+"_"+AnimDirection())
 		
 	else:
+		
 		animation_player.play(state+"_"+AnimDirection())
 	pass
 
@@ -65,3 +76,33 @@ func AnimDirection() -> String:
 		return "up"
 	else :
 		return "right"
+
+func _take_damage(hurt_box : HurtBox) -> void:
+	print(hurt_box)
+	if invulnerable == true:
+		return
+	
+	update_hp(-hurt_box.damage)
+	if hp > 0:
+		player_damaged.emit(hurt_box)
+	else:
+		player_damaged.emit(hurt_box)
+		update_hp(99)
+	pass
+
+
+func update_hp ( _delta : int) -> void:
+	hp = clampi( hp + _delta, 0, max_hp)
+	PlayerHud.update_hp(hp, max_hp)
+	pass
+	
+func make_invulnerable( _duration : float = 1.0 ) -> void:
+	
+	invulnerable = true
+	hit_box.monitoring = false
+	
+	await get_tree().create_timer( _duration ).timeout
+	
+	invulnerable = false
+	hit_box.monitoring = true
+	pass
