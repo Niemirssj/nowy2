@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cx4auxkcp31rw"]
+
+[ext_resource type="Script" path="res://Items/Scripts/ItemData.gd" id="1_yl7bw"]
+[ext_resource type="Texture2D" uid="uid://cu5tqjdia5f64" path="res://Items/Sprites/items.png" id="2_2cfnl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4au7n"]
+atlas = ExtResource("2_2cfnl")
+region = Rect2(64, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_yl7bw")
+name = "Stone"
+description = "Small stone, good to throw"
+texture = SubResource("AtlasTexture_4au7n")
