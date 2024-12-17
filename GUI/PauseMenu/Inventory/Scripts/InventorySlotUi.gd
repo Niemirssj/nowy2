@@ -10,6 +10,7 @@ func _ready() -> void:
 	label.text=""
 	focus_entered.connect( item_focused )
 	focus_exited.connect( item_unfocused )
+	pressed.connect(ItemPressed)
 	pass # Replace with function body.
 
 
@@ -34,4 +35,14 @@ func item_focused() -> void:
 
 func item_unfocused() -> void:
 	PauseMenu.UpdateDescription( "" )
+	pass
+
+func ItemPressed() -> void:
+	if slot_data:
+		if slot_data.item:
+			var wasused = slot_data.item.use()
+			if wasused == false:
+				return
+			slot_data.quantity -= 1
+			label.text = str(slot_data.quantity)
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dajrf1vhccybb"]
+[gd_scene load_steps=37 format=3 uid="uid://dajrf1vhccybb"]
 
 [ext_resource type="Texture2D" uid="uid://ntitqwd50f8m" path="res://Enemies/Slime/Slime.png" id="1_d83ak"]
 [ext_resource type="Script" path="res://Enemies/Scripts/enemy.gd" id="1_ghqvu"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_stun.gd" id="8_0aof2"]
 [ext_resource type="Script" path="res://Enemies/Scripts/States/enemy_state_destroy.gd" id="9_423nn"]
 [ext_resource type="Texture2D" uid="uid://c1383b1uuh27r" path="res://Enemies/Slime/DestroySmoke.png" id="9_hgjim"]
+[ext_resource type="Script" path="res://Enemies/Scripts/DropData.gd" id="10_no0pk"]
+[ext_resource type="Resource" uid="uid://pphmo0jrjlok" path="res://Items/Gem.tres" id="11_5s1ji"]
 [ext_resource type="PackedScene" uid="uid://dljbhpkmg7jqv" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="11_fy53c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_csic3"]
@@ -677,6 +679,13 @@ _data = {
 "walk_up": SubResource("Animation_saywy")
 }
 
+[sub_resource type="Resource" id="Resource_6sa2t"]
+script = ExtResource("10_no0pk")
+item = ExtResource("11_5s1ji")
+probability = 100.0
+min_amount = 1
+max_amount = 3
+
 [sub_resource type="Animation" id="Animation_2cvme"]
 length = 0.001
 tracks/0/type = "value"
@@ -783,6 +792,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("9_423nn")
+drops = Array[ExtResource("10_no0pk")]([SubResource("Resource_6sa2t")])
 
 [node name="DestroyEffectSprite" type="Sprite2D" parent="."]
 visible = false

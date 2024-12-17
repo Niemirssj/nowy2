@@ -1,6 +1,8 @@
 extends CanvasLayer
 signal shown
 signal hidden
+
+@onready var audio_stream_player: AudioStreamPlayer = $Control/AudioStreamPlayer
 @onready var button_save: Button = $Control/VBoxContainer/Button_Save
 @onready var button_load: Button = $Control/VBoxContainer/Button_Load
 @onready var item_description: Label = $Control/ItemDescription
@@ -54,4 +56,9 @@ func _on_load_pressed() -> void:
 
 func UpdateDescription( newtext : String) -> void:
 	item_description.text=newtext
+	pass
+
+func PlaySound(audio : AudioStream) -> void:
+	audio_stream_player.stream=audio
+	audio_stream_player.play()
 	pass

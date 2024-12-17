@@ -132,3 +132,6 @@ layout_mode = 2
 
 [node name="InventorySlot9" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_jxnfh")]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+max_polyphony = 4
