@@ -8,7 +8,7 @@ func _ready() -> void:
 	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# sdasddddddddddCalled every frame. 'delta' is the elapsed time since the previous frame.
 func UpdateLimits(bounds : Array[ Vector2 ]) -> void:
 	if bounds == []:
 		return
